@@ -50,6 +50,14 @@ div.article-cards-item {
     height: 100%;
     min-height: var(--min-height);
     position: relative;
+    transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+    will-change: transform, box-shadow;
+
+    &:hover {
+        transform: translateY(-8px) scale(1.04);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+        z-index: 2;
+    }
 }
 
 a.article-cards-item-link {
