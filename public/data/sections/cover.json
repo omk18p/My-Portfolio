@@ -113,7 +113,19 @@
                 "text": "Learning about personal finance and analyzing stock market trends."
               }
             }
+          },
+          {
+            "id": 4,
+            "faIcon": "fa-solid fa-brain",
+            "faIconColors": { "bg": "", "fill": "" },
+            "locales": {
+              "en": {
+                "title": "{{Problem}} Solving",
+                "text": "Practicing data structures and algorithms on platforms like LeetCode and GeeksforGeeks to sharpen logic and coding skills."
+              }
+            }
           }
+          
         ]
       }
     ]

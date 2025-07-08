@@ -104,7 +104,38 @@
                 "tags": ["WebSocket", "Real-Time", "Editor", "React", "Monaco", "Express"]
               }
             }
+          },{
+            "id": 4,
+            "categoryId": "category_web",
+            "img": "",
+            "faIcon": "fa-solid fa-address-card",
+            "faIconColors": { "bg": "", "fill": "" },
+            "preview": {
+              "links": [
+                {
+                  "href": "https://github.com/omk18p/My-Portfolio",
+                  "tooltipString": "see_on_github",
+                  "faIcon": "fa-brands fa-github"
+                },
+                {
+                  "href": "https://my-portfolio-ten-eosin-23.vercel.app/",
+                  "tooltipString": "visit_website",
+                  "faIcon": "fa-solid fa-up-right-from-square"
+                }
+              ],
+              "screenshots": [],
+              "screenshotsAspectRatio": "",
+              "youtubeVideo": ""
+            },
+            "locales": {
+              "en": {
+                "title": "My Portfolio",
+                "text": "A personal portfolio built using <b>React</b> and <b>Vite</b>. Showcases projects, skills, and background with support for dark/light themes, preloader, and animated UI. Fully responsive and optimized for performance.",
+                "tags": ["Portfolio", "React", "Vite", "Frontend", "Responsive"]
+              }
+            }
           }
+          
         ]
       }
     ]
