@@ -64,7 +64,7 @@
             "faIconColors": { "bg": "", "fill": "" },
             "locales": {
               "en": {
-                "text": "<p>I'm Omkar Patil, an engineering student pursuing B.Tech in Information Technology at Walchand College of Engineering, Sangli (2022–2026). I specialize in full-stack development with a passion for backend engineering and API design.</p><p>I've worked on impactful projects like <strong>QuickHireAI</strong>, an AI-based interview platform using Google Gemini AI and WebRTC, and <strong>MyGym</strong>, a smart gym management system built with Android and React, backed by Firebase.</p><p>I'm always exploring better ways to solve problems, write clean code, and build things that matter.</p>"
+"text": "<p>I'm Omkar Patil, an engineering student pursuing B.Tech in Information Technology at Walchand College of Engineering, Sangli (2022–2026). I specialize in full-stack development, with a strong interest in backend systems and RESTful API design.</p><p>I love turning complex problems into simple, efficient solutions through clean code and thoughtful design. My areas of focus include JavaScript, React, Node.js, and MongoDB.</p><p>With a constant drive to learn and grow, I enjoy collaborating on impactful projects, exploring new technologies, and contributing to open-source whenever possible.</p>"
               }
             }
           }
