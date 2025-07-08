@@ -1,0 +1,110 @@
+{
+    "title": {
+      "locales": {
+        "en": {
+          "title_short": "Life recently",
+          "title_short_nav": "Updates",
+          "title_long_prefix": "Take a look at my",
+          "title_long": "Recent {{Updates}}"
+        }
+      }
+    },
+    "articles": [
+      {
+        "id": 1,
+        "component": "ArticleFacts",
+        "locales": {},
+        "settings": {
+          "order_items_by": "id",
+          "order_items_sort": "asc"
+        },
+        "items": [
+          {
+            "id": 1,
+            "img": null,
+            "faIcon": "fa-solid fa-tablet-screen-button",
+            "faIconColors": { "bg": "", "fill": "" },
+            "locales": {
+              "en": {
+                "title": "04",
+                "text": "Apps Developed"
+              }
+            }
+          },
+          {
+            "id": 7,
+            "img": null,
+            "faIcon": "fa-solid fa-heart",
+            "faIconColors": { "bg": "", "fill": "" },
+            "locales": {
+              "en": {
+                "title": "Infinite",
+                "text": "Passion for learning"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "component": "ArticleThread",
+        "locales": {
+          "en": { "title": "Quick {{Facts}}" }
+        },
+        "settings": {
+          "max_rows_collapse_threshold": 3,
+          "order_items_by": "dateStart",
+          "order_items_sort": "desc"
+        },
+        "items": [
+          {
+            "id": 6,
+            "date": { "year": 2025, "month": 7 },
+            "preview": {
+              "links": [],
+              "screenshots": [],
+              "screenshotsAspectRatio": "",
+              "youtubeVideo": ""
+            },
+            "locales": {
+              "en": {
+                "title": "Currently building {{BloodBridge}} 🩸",
+                "province": "India",
+                "country": "IN",
+                "institution": "",
+                "text": "I'm currently developing <b>BloodBridge</b>, a real-time emergency blood request and donation platform. It connects donors, hospitals, and blood banks in one smart system to solve the biggest gaps in emergency blood management.",
+                "list": [
+                  "Real-time tracking of blood group availability",
+                  "Emergency request broadcast system",
+                  "Donor eligibility tracker & donation history",
+                  "Hospital & blood bank role-based login",
+                  "Govt integration (e-RaktKosh API, etc.)",
+                  "Role management for admin, hospital, donor, and blood bank"
+                ]
+              }
+            }
+          },
+          {
+            "id": 7,
+            "date": { "year": 2025, "month": 7 },
+            "preview": {
+              "links": [],
+              "screenshots": [],
+              "screenshotsAspectRatio": "",
+              "youtubeVideo": ""
+            },
+            "locales": {
+              "en": {
+                "title": "Looking forward to learning {{AWS}} ☁️",
+                "province": "India",
+                "country": "IN",
+                "institution": "",
+                "text": "I'm excited to dive into <b>Amazon Web Services (AWS)</b> to expand my cloud expertise. My goal is to learn scalable infrastructure setup, cloud functions, S3, EC2, IAM, and deployment strategies for real-world apps. This will help me deliver production-ready full-stack projects on the cloud!"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,112 @@
+{
+    "title": {
+      "locales": {
+        "en": {
+          "title_short": "Portfolio",
+          "title_short_nav": "Portfolio",
+          "title_long_prefix": "Take a look at",
+          "title_long": "My {{Portfolio}}"
+        }
+      }
+    },
+    "articles": [
+      {
+        "id": 1,
+        "component": "ArticlePortfolio",
+        "locales": {
+          "en": {
+            "category_all": "All",
+            "category_apps": "Apps",
+            "category_web": "Web",
+            "category_utilities": "Utilities"
+          }
+        },
+        "settings": {
+          "categorize_by": ["category_apps", "category_web", "category_utilities"],
+          "order_items_by": "id",
+          "order_items_sort": "asc"
+        },
+        "items": [
+          {
+            "id": 1,
+            "categoryId": "category_web",
+            "img": "",
+            "faIcon": "fa-solid fa-robot",
+            "faIconColors": { "bg": "", "fill": "" },
+            "preview": {
+              "links": [
+                {
+                  "href": "https://github.com/omk18p/QuickHireAI",
+                  "tooltipString": "see_on_github",
+                  "faIcon": "fa-brands fa-github"
+                }
+              ],
+              "screenshots": [],
+              "screenshotsAspectRatio": "",
+              "youtubeVideo": ""
+            },
+            "locales": {
+              "en": {
+                "title": "QuickHire AI",
+                "text": "An AI-powered technical interview platform for companies and students. It features <b>AI-generated questions</b>, <b>real-time feedback</b>, and <b>intelligent evaluation</b> via Google Gemini. Companies can upload candidates and view performance reports, while students take mock or official interviews in an interactive environment.",
+                "tags": ["MERN", "AI", "Interview Platform", "OpenAI", "JWT"]
+              }
+            }
+          },
+          {
+            "id": 2,
+            "categoryId": "category_web",
+            "img": "",
+            "faIcon": "fa-solid fa-dumbbell",
+            "faIconColors": { "bg": "", "fill": "" },
+            "preview": {
+              "links": [
+                {
+                  "href": "https://github.com/omk18p/MyGym",
+                  "tooltipString": "see_on_github",
+                  "faIcon": "fa-brands fa-github"
+                }
+              ],
+              "screenshots": [],
+              "screenshotsAspectRatio": "",
+              "youtubeVideo": ""
+            },
+            "locales": {
+              "en": {
+                "title": "MyGym – Gym Management System",
+                "text": "A full-stack gym management system for Android and web. Includes QR-based <b>attendance tracking</b>, <b>health reports</b>, <b>live dashboard</b>, and a <b>chat system</b>. Built with <b>React</b>, <b>Java (Android)</b>, and <b>Firebase</b> for real-time data and secure access.",
+                "tags": ["React", "Android", "Firebase", "Gym Management", "QR", "Java"]
+              }
+            }
+          },
+          {
+            "id": 3,
+            "categoryId": "category_web",
+            "img": "",
+            "faIcon": "fa-solid fa-code-branch",
+            "faIconColors": { "bg": "", "fill": "" },
+            "preview": {
+              "links": [
+                {
+                  "href": "https://github.com/omk18p/CodeSync",
+                  "tooltipString": "see_on_github",
+                  "faIcon": "fa-brands fa-github"
+                }
+              ],
+              "screenshots": [],
+              "screenshotsAspectRatio": "",
+              "youtubeVideo": ""
+            },
+            "locales": {
+              "en": {
+                "title": "CodeSync",
+                "text": "A real-time collaborative code editor built using <b>React</b>, <b>Express.js</b>, <b>Socket.IO</b>, and <b>Monaco Editor</b>. Supports multiple users in a shared session with <b>file syncing</b>, <b>real-time typing indicators</b>, and <b>multi-language syntax highlighting</b>.",
+                "tags": ["WebSocket", "Real-Time", "Editor", "React", "Monaco", "Express"]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

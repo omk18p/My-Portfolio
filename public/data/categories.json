@@ -1,0 +1,19 @@
+{
+    "categories": [
+        {
+            "id": "about",
+            "faIcon": "fa-regular fa-user",
+            "title": "About"
+        },
+        {
+            "id": "portfolio",
+            "faIcon": "fa-regular fa-folder-open",
+            "title": "Portfolio"
+        },
+        {
+            "id": "contact",
+            "faIcon": "fa-regular fa-envelope",
+            "title": "Contact"
+        }
+    ]
+}

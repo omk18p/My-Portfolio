@@ -1,0 +1,33 @@
+{
+    "name": "Omkar Patil",
+
+    "profilePictureUrl": "images/pictures/profile-picture.jpg",
+    "resumePdfUrl": "",
+
+    "statusCircleVisible": true,
+    "statusCircleVariant": "available",
+    "statusCircleHoverMessage": "status_message_available_for_freelance",
+
+    "locales": {
+        "en": {
+            "localized_name": "Omkar Patil",
+            "localized_name_stylized": " [[Omkar {{Patil}}]]",
+            "roles": [
+                "Backend Developer",
+                "Frontend Developer"
+            ]
+        },
+        "es": {
+            "roles": [
+                "Backend Developer",
+                "Frontend Developer"
+            ]
+        },
+        "fr": {
+            "roles": [
+                "Backend Developer",
+                "Frontend Developer"
+            ]
+        }
+    }
+}

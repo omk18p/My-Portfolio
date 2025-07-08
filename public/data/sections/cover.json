@@ -1,0 +1,121 @@
+{
+    "title": {
+      "locales": {
+        "en": {
+          "title_short": "Welcome!",
+          "title_short_nav": "About me",
+          "title_long_prefix": "Hello...",
+          "title_long": "I'm Omkar Patil!"
+        }
+      }
+    },
+    "articles": [
+      {
+        "id": 1,
+        "component": "ArticleInlineList",
+        "locales": {},
+        "settings": {
+          "order_items_by": "id",
+          "order_items_sort": "asc",
+          "display_as_list_if_width_is_lower_than": 380
+        },
+        "items": [
+          {
+            "id": 1,
+            "label": "Sangli, Maharashtra, India",
+            "link": { "href": "", "tooltipString": "" },
+            "faIcon": "pi pi-map-marker"
+          },
+          {
+            "id": 2,
+            "label": "omkar.patil2@walchandsangli.ac.in",
+            "link": {
+              "href": "mailto:omkar.patil2@walchandsangli.ac.in",
+              "tooltipString": "email_me"
+            },
+            "faIcon": "fa-regular fa-envelope"
+          },
+          {
+            "id": 3,
+            "label": "@omk18p",
+            "link": {
+              "href": "https://github.com/omk18p",
+              "tooltipString": "see_on_github"
+            },
+            "faIcon": "fa-brands fa-github"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "component": "ArticleText",
+        "locales": {
+          "en": { "title": "{{A little bit}} about me..." }
+        },
+        "settings": {
+          "order_items_by": "id",
+          "order_items_sort": "asc"
+        },
+        "items": [
+          {
+            "id": 1,
+            "img": "images/pictures/about-texts-image-1.png",
+            "faIcon": "",
+            "faIconColors": { "bg": "", "fill": "" },
+            "locales": {
+              "en": {
+                "text": "<p>I'm Omkar Patil, an engineering student pursuing B.Tech in Information Technology at Walchand College of Engineering, Sangli (2022–2026). I specialize in full-stack development with a passion for backend engineering and API design.</p><p>I've worked on impactful projects like <strong>QuickHireAI</strong>, an AI-based interview platform using Google Gemini AI and WebRTC, and <strong>MyGym</strong>, a smart gym management system built with Android and React, backed by Firebase.</p><p>I'm always exploring better ways to solve problems, write clean code, and build things that matter.</p>"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "component": "ArticleInfoList",
+        "settings": {
+          "order_items_by": "id",
+          "order_items_sort": "asc"
+        },
+        "locales": {
+          "en": { "title": "Personal {{interests}}" }
+        },
+        "items": [
+          {
+            "id": 1,
+            "faIcon": "fa-solid fa-chart-line",
+            "faIconColors": { "bg": "", "fill": "" },
+            "locales": {
+              "en": {
+                "title": "{{Learning}} new tech",
+                "text": "Exploring backend tools, deployment practices, and DevOps fundamentals."
+              }
+            }
+          },
+          {
+            "id": 2,
+            "faIcon": "fa-solid fa-terminal",
+            "faIconColors": { "bg": "", "fill": "" },
+            "locales": {
+              "en": {
+                "title": "Building {{projects}}",
+                "text": "Creating full-stack apps and experimenting with APIs, databases, and AI tools."
+              }
+            }
+          },
+          {
+            "id": 3,
+            "faIcon": "fa-solid fa-coins",
+            "faIconColors": { "bg": "", "fill": "" },
+            "locales": {
+              "en": {
+                "title": "{{Investing}} & Stock Market",
+                "text": "Learning about personal finance and analyzing stock market trends."
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
