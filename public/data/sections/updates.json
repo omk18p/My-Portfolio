@@ -42,7 +42,19 @@
                 "text": "Passion for learning"
               }
             }
+          },{
+            "id": 9,
+            "img": null,
+            "faIcon": "fa-solid fa-code",
+            "faIconColors": { "bg": "", "fill": "" },
+            "locales": {
+              "en": {
+                "title": "350+",
+                "text": "DSA problems solved on LeetCode and GeeksforGeeks"
+              }
+            }
           }
+          
         ]
       },
       {
