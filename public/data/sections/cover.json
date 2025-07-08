@@ -23,7 +23,10 @@
           {
             "id": 1,
             "label": "Sangli, Maharashtra, India",
-            "link": { "href": "", "tooltipString": "" },
+            "link": {
+              "href": "https://www.google.com/maps?q=Vishrambag,+Sangli,+Maharashtra,+India",
+              "tooltipString": "open_in_google_maps"
+            },
             "faIcon": "pi pi-map-marker"
           },
           {
