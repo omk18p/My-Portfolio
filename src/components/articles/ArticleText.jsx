@@ -2,6 +2,7 @@ import "./ArticleText.scss"
 import React, {useEffect, useState} from 'react'
 import Article from "/src/components/articles/base/Article.jsx"
 import AvatarView from "/src/components/generic/AvatarView.jsx"
+import { useData } from "/src/providers/DataProvider.jsx"
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -11,6 +12,9 @@ import AvatarView from "/src/components/generic/AvatarView.jsx"
  */
 function ArticleText({ dataWrapper, id }) {
     const [selectedItemCategoryId, setSelectedItemCategoryId] = useState(null)
+    const data = useData();
+    const profile = data.getProfile();
+    const resumeUrl = profile.resumePdfUrl;
 
     return (
         <Article id={dataWrapper.uniqueId}
@@ -21,6 +25,19 @@ function ArticleText({ dataWrapper, id }) {
                  setSelectedItemCategoryId={setSelectedItemCategoryId}>
             <ArticleTextItems dataWrapper={dataWrapper}
                               selectedItemCategoryId={selectedItemCategoryId}/>
+            {resumeUrl && (
+                <div style={{textAlign: 'center', marginTop: '2rem'}}>
+                  <a
+                    href={resumeUrl}
+                    download="Omkar-Patil-Resume.pdf"
+                    className="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download Resume
+                  </a>
+                </div>
+            )}
         </Article>
     )
 }
