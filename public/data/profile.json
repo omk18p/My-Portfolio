@@ -6,7 +6,7 @@
 
     "statusCircleVisible": true,
     "statusCircleVariant": "available",
-    "statusCircleHoverMessage": "Open to work",
+    "statusCircleHoverMessage": "open_to_work",
 
     "locales": {
         "en": {

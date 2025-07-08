@@ -2,6 +2,8 @@
     "locales": {
         "en": {
             "open_in_google_maps": "Open in Google Maps",
+            "open_to_work": "Open to work",
+            "visit_website": "Visit Website",
             "about_video": "About Video",
             "activate_magic_cursor": "Activate Magic Cursor",
             "activate_magic_cursor_message": "The magic cursor has been [[activated]].",
