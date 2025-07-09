@@ -8,6 +8,7 @@ import {useConstants} from "/src/hooks/constants.js"
 import AvatarView from "/src/components/generic/AvatarView.jsx"
 import {useLocation} from "/src/providers/LocationProvider.jsx"
 import NumberAnimation from "/src/components/generic/NumberAnimation.jsx"
+import { motion } from 'framer-motion'
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -80,7 +81,13 @@ function ArticleSkillsItem({ itemWrapper }) {
         ``
 
     return (
-        <div className={`article-skills-item`}>
+        <motion.div 
+            className={`article-skills-item`}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.025, boxShadow: '0 2px 16px #C084FC66' }}
+            transition={{ type: 'spring', stiffness: 140, damping: 18, duration: 0.22 }}
+        >
             <div className={`article-skills-item-avatar-wrapper`}>
                 <AvatarView src={itemWrapper.img}
                             faIcon={itemWrapper.faIconWithFallback}
@@ -90,7 +97,7 @@ function ArticleSkillsItem({ itemWrapper }) {
             </div>
 
             <ArticleSkillsItemInfo itemWrapper={itemWrapper}/>
-        </div>
+        </motion.div>
     )
 }
 
@@ -164,8 +171,6 @@ function ArticleSkillsItemInfo({ itemWrapper }) {
                          style={progressStyle}/>
                 </div>
             )}
-
-
 
             {description && (
                 <div className={`article-skills-item-description ${descriptionClass}`}

@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react'
 import Article from "/src/components/articles/base/Article.jsx"
 import Collapsable from "/src/components/capabilities/Collapsable.jsx"
 import {ArticleItemInfoForTimelines, ArticleItemInfoForTimelinesBody, ArticleItemInfoForTimelinesHeader, ArticleItemInfoForTimelinesPreviewFooter} from "/src/components/articles/partials/ArticleItemInfoForTimelines"
+import { motion } from 'framer-motion'
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -63,15 +64,23 @@ function ArticleThreadItem({ itemWrapper }) {
                 <i className={`fa-solid fa-circle`}/>
             </div>
 
-            <ArticleItemInfoForTimelines className={`article-thread-item-content`}
-                                         smallDateBadge={true}>
-                <ArticleItemInfoForTimelinesHeader itemWrapper={itemWrapper}
-                                                   dateInterval={false}/>
+            <motion.div
+                className={`article-thread-item-content`}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.025, boxShadow: '0 2px 16px #C084FC66' }}
+                transition={{ type: 'spring', stiffness: 140, damping: 18, duration: 0.22 }}
+            >
+                <ArticleItemInfoForTimelines className={``}
+                                             smallDateBadge={true}>
+                    <ArticleItemInfoForTimelinesHeader itemWrapper={itemWrapper}
+                                                       dateInterval={false}/>
 
-                <ArticleItemInfoForTimelinesBody itemWrapper={itemWrapper}/>
+                    <ArticleItemInfoForTimelinesBody itemWrapper={itemWrapper}/>
 
-                <ArticleItemInfoForTimelinesPreviewFooter itemWrapper={itemWrapper}/>
-            </ArticleItemInfoForTimelines>
+                    <ArticleItemInfoForTimelinesPreviewFooter itemWrapper={itemWrapper}/>
+                </ArticleItemInfoForTimelines>
+            </motion.div>
         </div>
     )
 }

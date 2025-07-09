@@ -1,6 +1,7 @@
 import "./Article.scss"
 import React, {useEffect, useState} from 'react'
 import CategoryFilter from "/src/components/generic/CategoryFilter.jsx"
+import { motion } from 'framer-motion'
 
 /**
  * @param {*} children
@@ -11,10 +12,11 @@ import CategoryFilter from "/src/components/generic/CategoryFilter.jsx"
  * @param {String} selectedItemCategoryId
  * @param {Function} setSelectedItemCategoryId
  * @param {Boolean} forceHideTitle
+ * @param {Boolean} animate
  * @return {JSX.Element}
  * @constructor
  */
-function Article({ children, id, type, dataWrapper, className = "", selectedItemCategoryId, setSelectedItemCategoryId, forceHideTitle = false }) {
+function Article({ children, id, type, dataWrapper, className = "", selectedItemCategoryId, setSelectedItemCategoryId, forceHideTitle = false, animate = false }) {
     useEffect(() => {
         const loadedState = _loadState()
         if (dataWrapper.categories.length > 0 && !selectedItemCategoryId) {
@@ -39,8 +41,16 @@ function Article({ children, id, type, dataWrapper, className = "", selectedItem
         window.articleStates[id] = categoryId
     }
 
+    const ArticleTag = animate ? motion.article : 'article'
+    const animationProps = animate ? {
+        initial: { opacity: 0, y: 24 },
+        animate: { opacity: 1, y: 0 },
+        whileHover: { scale: 1.02, boxShadow: '0 4px 24px #C084FC22' },
+        transition: { type: 'spring', stiffness: 120, damping: 18, duration: 0.35 }
+    } : {}
+
     return (
-        <article className={`article ${type} ${className}`}>
+        <ArticleTag className={`article ${type} ${className}`} {...animationProps}>
             {(dataWrapper.locales.title && !forceHideTitle) && (
                 <ArticleTitle title={dataWrapper.locales.title}/>
             )}
@@ -55,7 +65,7 @@ function Article({ children, id, type, dataWrapper, className = "", selectedItem
 
                 {children}
             </ArticleContent>
-        </article>
+        </ArticleTag>
     )
 }
 

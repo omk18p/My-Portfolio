@@ -4,6 +4,7 @@ import Article from "/src/components/articles/base/Article.jsx"
 import AvatarView from "/src/components/generic/AvatarView.jsx"
 import Link from "/src/components/generic/Link.jsx"
 import {useViewport} from "/src/providers/ViewportProvider.jsx"
+import { motion } from 'framer-motion'
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -92,7 +93,13 @@ function ArticleInfoListItem({ itemWrapper}) {
     const textClass = `text-${baseTextSize}`
 
     return (
-        <div className={`article-info-list-item ${hoverClass}`}>
+        <motion.div
+            className={`article-info-list-item ${hoverClass}`}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.025, boxShadow: '0 2px 16px #C084FC66' }}
+            transition={{ type: 'spring', stiffness: 140, damping: 18, duration: 0.22 }}
+        >
             <AvatarView src={itemWrapper.img}
                         faIcon={itemWrapper.faIconWithFallback}
                         style={itemWrapper.faIconStyle}
@@ -117,7 +124,7 @@ function ArticleInfoListItem({ itemWrapper}) {
                     </Link>
                 )}
             </div>
-        </div>
+        </motion.div>
     )
 }
 

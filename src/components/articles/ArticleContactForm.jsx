@@ -13,6 +13,7 @@ import {MessageCard, MessageCardIcon, MessageCardBody, MessageCardFooter} from "
 import Input from "/src/components/forms/fields/Input.jsx"
 import Textarea from "/src/components/forms/fields/Textarea.jsx"
 import StandardButton from "/src/components/buttons/StandardButton.jsx"
+import { motion } from 'framer-motion'
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -31,7 +32,8 @@ function ArticleContactForm({ dataWrapper, id }) {
                  forceHideTitle={shouldHideTitle}
                  className={`article-contact-form`}
                  selectedItemCategoryId={selectedItemCategoryId}
-                 setSelectedItemCategoryId={setSelectedItemCategoryId}>
+                 setSelectedItemCategoryId={setSelectedItemCategoryId}
+                 animate={true}>
             <ArticleContactFormContent dataWrapper={dataWrapper}
                                        selectedItemCategoryId={selectedItemCategoryId}
                                        setShouldHideTitle={setShouldHideTitle}/>
@@ -218,55 +220,69 @@ function ArticleContactFormContentFields({ onInput, didSubmit }) {
 
     return (
         <>
-            <RowFormGroup className={`${splitColClass}`}>
-                <RowFormGroupItem>
-                    <Input id={`contact-form-name`}
-                           name={`name`}
-                           type={`text`}
-                           model={name}
-                           setModel={setName}
-                           faIconPrefix={`fa-solid fa-signature`}
-                           placeholder={language.getString("name")}
-                           className={textClass}
-                           required={true}/>
-                </RowFormGroupItem>
+            <motion.div
+                className={`${splitColClass}`}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ type: 'spring', stiffness: 120, damping: 18, duration: 0.35 }}
+            >
+                <RowFormGroup>
+                    <RowFormGroupItem>
+                        <Input id={`contact-form-name`}
+                               name={`name`}
+                               type={`text`}
+                               model={name}
+                               setModel={setName}
+                               faIconPrefix={`fa-solid fa-signature`}
+                               placeholder={language.getString("name")}
+                               className={textClass}
+                               required={true}/>
+                    </RowFormGroupItem>
 
-                <RowFormGroupItem>
-                    <Input id={`contact-form-email`}
-                           name={`email`}
-                           type={`email`}
-                           model={email}
-                           setModel={setEmail}
-                           faIconPrefix={`fa-solid fa-envelope`}
-                           placeholder={language.getString("email")}
-                           className={textClass}
-                           required={true}/>
-                </RowFormGroupItem>
+                    <RowFormGroupItem>
+                        <Input id={`contact-form-email`}
+                               name={`email`}
+                               type={`email`}
+                               model={email}
+                               setModel={setEmail}
+                               faIconPrefix={`fa-solid fa-envelope`}
+                               placeholder={language.getString("email")}
+                               className={textClass}
+                               required={true}/>
+                    </RowFormGroupItem>
 
-                <RowFormGroupItem>
-                    <Input id={`contact-form-subject`}
-                           name={`contact-message-subject`}
-                           type={`text`}
-                           model={subject}
-                           setModel={setSubject}
-                           faIconPrefix={`fa-solid fa-pen-to-square`}
-                           placeholder={language.getString("subject")}
-                           className={textClass}
-                           required={true}/>
-                </RowFormGroupItem>
-            </RowFormGroup>
+                    <RowFormGroupItem>
+                        <Input id={`contact-form-subject`}
+                               name={`contact-message-subject`}
+                               type={`text`}
+                               model={subject}
+                               setModel={setSubject}
+                               faIconPrefix={`fa-solid fa-pen-to-square`}
+                               placeholder={language.getString("subject")}
+                               className={textClass}
+                               required={true}/>
+                    </RowFormGroupItem>
+                </RowFormGroup>
+            </motion.div>
 
-            <RowFormGroup className={`${splitColClass}`}>
-                <RowFormGroupItem>
-                    <Textarea id={`contact-form-textarea`}
-                              name={`message`}
-                              model={message}
-                              setModel={setMessage}
-                              placeholder={language.getString("message")}
-                              className={textClass}
-                              required={true}/>
-                </RowFormGroupItem>
-            </RowFormGroup>
+            <motion.div
+                className={`${splitColClass}`}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ type: 'spring', stiffness: 120, damping: 18, duration: 0.35, delay: 0.08 }}
+            >
+                <RowFormGroup>
+                    <RowFormGroupItem>
+                        <Textarea id={`contact-form-textarea`}
+                                  name={`message`}
+                                  model={message}
+                                  setModel={setMessage}
+                                  placeholder={language.getString("message")}
+                                  className={textClass}
+                                  required={true}/>
+                    </RowFormGroupItem>
+                </RowFormGroup>
+            </motion.div>
         </>
     )
 }
@@ -284,21 +300,27 @@ function ArticleContactFormSuccessMessage({ dataWrapper, email, onReset }) {
     const formattedEmail = `<br>«<span class="me-1"></span>${email}<span class="ms-1"></span>»`
 
     return (
-        <MessageCard>
-            <MessageCardIcon faIcon={`fa-solid fa-envelope-circle-check`}/>
+        <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring', stiffness: 120, damping: 18, duration: 0.35 }}
+        >
+            <MessageCard>
+                <MessageCardIcon faIcon={`fa-solid fa-envelope-circle-check`}/>
 
-            <MessageCardBody title={dataWrapper.locales.contactThankYouTitle}
-                             text={dataWrapper.locales.contactThankYouBody}/>
+                <MessageCardBody title={dataWrapper.locales.contactThankYouTitle}
+                                 text={dataWrapper.locales.contactThankYouBody}/>
 
-            <MessageCardFooter text={dataWrapper.locales.contactThankYouFooter.replace("$email", formattedEmail)}>
-                <StandardButton className={`article-contact-form-reset-button`}
-                                variant={`primary`}
-                                faIcon={`fa-regular fa-envelope`}
-                                label={language.getString("send_another_message")}
-                                tooltip={language.getString("send_another_message")}
-                                onClick={onReset}/>
-            </MessageCardFooter>
-        </MessageCard>
+                <MessageCardFooter text={dataWrapper.locales.contactThankYouFooter.replace("$email", formattedEmail)}>
+                    <StandardButton className={`article-contact-form-reset-button`}
+                                    variant={`primary`}
+                                    faIcon={`fa-regular fa-envelope`}
+                                    label={language.getString("send_another_message")}
+                                    tooltip={language.getString("send_another_message")}
+                                    onClick={onReset}/>
+                </MessageCardFooter>
+            </MessageCard>
+        </motion.div>
     )
 }
 

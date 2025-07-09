@@ -8,6 +8,7 @@ import CircularButton from "/src/components/buttons/CircularButton.jsx"
 import Link from "/src/components/generic/Link.jsx"
 import {useConstants} from "/src/hooks/constants.js"
 import {useViewport} from "/src/providers/ViewportProvider.jsx"
+import { motion } from 'framer-motion'
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -71,7 +72,13 @@ function ArticleCardsItem({ itemWrapper }) {
         `text-2` : `text-2`
 
     return (
-        <div className={`article-cards-item`}>
+        <motion.div 
+            className={`article-cards-item`}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.025, boxShadow: '0 2px 16px #C084FC66' }}
+            transition={{ type: 'spring', stiffness: 140, damping: 18, duration: 0.22 }}
+        >
             {itemWrapper.link && itemWrapper.link.href && (
                 <Link href={itemWrapper.link.href}
                       className={`article-cards-item-link`}>
@@ -104,7 +111,7 @@ function ArticleCardsItem({ itemWrapper }) {
                                className={`article-cards-item-content-date-badge ${dateBadgeClass}`}/>
                 )}
             </div>
-        </div>
+        </motion.div>
     )
 }
 

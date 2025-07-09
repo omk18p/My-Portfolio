@@ -4,6 +4,7 @@ import Article from "/src/components/articles/base/Article.jsx"
 import Swipeable from "/src/components/capabilities/Swipeable.jsx"
 import {useConstants} from "/src/hooks/constants.js"
 import AvatarView from "/src/components/generic/AvatarView.jsx"
+import { motion } from 'framer-motion'
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -58,7 +59,13 @@ function ArticleFactsItems({ dataWrapper, selectedItemCategoryId }) {
  */
 function ArticleFactsItem({ itemWrapper }) {
     return (
-        <div className={`article-facts-item`}>
+        <motion.div
+            className={`article-facts-item`}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.025, boxShadow: '0 2px 16px #C084FC66' }}
+            transition={{ type: 'spring', stiffness: 140, damping: 18, duration: 0.22 }}
+        >
             <AvatarView src={itemWrapper.img}
                         faIcon={itemWrapper.faIcon}
                         style={itemWrapper.faIconStyle}
@@ -72,7 +79,7 @@ function ArticleFactsItem({ itemWrapper }) {
                 <div className={`article-facts-item-info-description text-3 mt-1`}
                      dangerouslySetInnerHTML={{__html: itemWrapper.locales.text}}/>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

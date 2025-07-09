@@ -8,6 +8,7 @@ import AvatarView from "/src/components/generic/AvatarView.jsx"
 import {Tag, Tags} from "/src/components/generic/Tags.jsx"
 import ArticleItemPreviewMenu from "/src/components/articles/partials/ArticleItemPreviewMenu.jsx"
 import {useLanguage} from "/src/providers/LanguageProvider.jsx"
+import { motion } from 'framer-motion'
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -85,7 +86,13 @@ function ArticlePortfolioItems({ dataWrapper, selectedItemCategoryId }) {
  */
 function ArticlePortfolioItem({ itemWrapper }) {
     return (
-        <div className={`article-portfolio-item`}>
+        <motion.div 
+            className={`article-portfolio-item`}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.025, boxShadow: '0 2px 16px #C084FC66' }}
+            transition={{ type: 'spring', stiffness: 140, damping: 18, duration: 0.22 }}
+        >
             <AvatarView src={itemWrapper.img}
                         faIcon={itemWrapper.faIcon}
                         style={itemWrapper.faIconStyle}
@@ -95,7 +102,7 @@ function ArticlePortfolioItem({ itemWrapper }) {
             <ArticlePortfolioItemTitle itemWrapper={itemWrapper}/>
             <ArticlePortfolioItemBody itemWrapper={itemWrapper}/>
             <ArticlePortfolioItemFooter itemWrapper={itemWrapper}/>
-        </div>
+        </motion.div>
     )
 }
 
