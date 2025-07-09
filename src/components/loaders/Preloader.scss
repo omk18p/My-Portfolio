@@ -55,3 +55,34 @@ div.preloader-window-info-developer {
     opacity: 0.5;
     text-align: center;
 }
+
+.preloader-logo-glow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 32px #9dff8e88) drop-shadow(0 0 64px #9dff8e44);
+  animation: preloader-glow-pulse 2s infinite alternate;
+}
+
+@keyframes preloader-glow-pulse {
+  0% { filter: drop-shadow(0 0 16px #9dff8e88) drop-shadow(0 0 32px #9dff8e44); }
+  100% { filter: drop-shadow(0 0 48px #9dff8ecc) drop-shadow(0 0 96px #9dff8e66); }
+}
+
+.preloader-typewriter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-typewriter-cursor {
+  color: #9dff8e;
+  animation: preloader-cursor-blink 1s steps(2, start) infinite;
+  font-weight: bold;
+}
+
+@keyframes preloader-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

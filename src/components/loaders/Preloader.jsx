@@ -1,6 +1,5 @@
 import "./Preloader.scss"
 import React, {useEffect, useState} from 'react'
-import PacMan from "/src/components/widgets/PacMan.jsx"
 import Logo from "/src/components/widgets/Logo.jsx"
 import {useScheduler} from "/src/hooks/scheduler.js"
 import {useUtils} from "/src/hooks/utils.js"
@@ -154,12 +153,7 @@ function Preloader({ children, preloaderSettings }) {
 }
 
 function PreloaderWindow({ title, subtitle, logoOffset, setDidLoadAllImages, showElements, isHiding }) {
-    const scheduler = useScheduler()
-
     const [didLoadLogo, setDidLoadLogo] = useState(false)
-
-    const [isPacManHidden, setIsPacManHidden] = useState(true)
-
     const hiddenClass = isHiding ?
         `preloader-window-hidden` : ``
 
@@ -168,113 +162,35 @@ function PreloaderWindow({ title, subtitle, logoOffset, setDidLoadAllImages, sho
             setDidLoadAllImages(true)
     }, [didLoadLogo])
 
-    useEffect(() => {
-        if(!showElements) {
-            setIsPacManHidden(true)
-            return
-        }
-
-        scheduler.clearAllWithTag("preloader-pacman")
-        scheduler.schedule(() => {
-            setIsPacManHidden(false)
-        }, 100, "preloader-pacman")
-    }, [showElements])
-
     return (
         <div className={`preloader-window ${hiddenClass}`}>
-            <div className={`preloader-window-content`}>
-                <PacMan variant={PacMan.ColorVariants.LOADER}
-                        hidden={isPacManHidden}/>
+            <div className={`preloader-window-content`}>  
+                <div className="preloader-logo-glow">
+                  <Logo size={3} setDidLoad={setDidLoadLogo} />
+                </div>
+                <div className="preloader-typewriter">
+                  
+                  <TypewriterText text="Taking off in 3... 2... 1..." />
 
-                <PreloaderWindowInfo title={title}
-                                     subtitle={subtitle}
-                                     logoOffset={logoOffset}
-                                     hidden={!showElements}
-                                     setDidLoadLogo={setDidLoadLogo}/>
+
+                </div>
             </div>
         </div>
     )
 }
 
-function PreloaderWindowInfo({ title, subtitle, logoOffset, hidden, setDidLoadLogo }) {
-    const utils = useUtils()
-    const scheduler = useScheduler()
-
-    const [isHidden, setIsHidden] = useState(true)
-
-    const hiddenClass = isHidden ?
-        `preloader-window-info-hidden` : ``
-
-    const [offsetTop, setOffsetTop] = useState(0)
-    const [offsetRight, setOffsetRight] = useState(0)
-    const [offsetBottom, setOffsetBottom] = useState(0)
-
-    const logoStyle = {
-        marginTop: `${offsetTop}px`,
-        marginRight: `${offsetRight}px`,
-    }
-
-    const developerStyle = {
-        marginTop: `${offsetBottom}px`
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', _onResize)
-        _onResize()
-        return () => {
-            window.removeEventListener('resize', _onResize)
-        }
-    }, [])
-
-    useEffect(() => {
-        if(hidden) {
-            setIsHidden(true)
-            return
-        }
-
-        scheduler.clearAllWithTag("preloader-window-info")
-        scheduler.schedule(() => {
-            setIsHidden(false)
-        }, 600, "preloader-window-info")
-    }, [hidden])
-
-    const _onResize = () => {
-        if (!logoOffset)
-            return
-
-        let scale = 1
-
-        const width = window.innerWidth
-        const { BREAKPOINTS } = utils.css
-
-        if (width < BREAKPOINTS.sm) scale = 0.72
-        else if (width < BREAKPOINTS.md) scale = 0.84
-        else if (width < BREAKPOINTS.lg) scale = 0.90
-        else if (width < BREAKPOINTS.xl) scale = 0.95
-
-        setOffsetTop(logoOffset.top * scale)
-        setOffsetRight(logoOffset.right * scale)
-        setOffsetBottom(logoOffset.bottom)
-    }
-
-    return (
-        <div className={`preloader-window-info ${hiddenClass}`}>
-            <div className={`preloader-window-info-title`}>
-                <Logo size={3}
-                      className={`preloader-window-logo`}
-                      setDidLoad={setDidLoadLogo}
-                      style={logoStyle}/>
-
-                <h5 className={`lead-2 mb-0`}
-                    dangerouslySetInnerHTML={{__html: title}}/>
-            </div>
-
-            <div className={`preloader-window-info-developer text-4`}
-                 style={developerStyle}
-                 dangerouslySetInnerHTML={{__html: subtitle}}>
-            </div>
-        </div>
-    )
+function TypewriterText({ text }) {
+  const [displayed, setDisplayed] = useState("");
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayed(text.slice(0, i + 1));
+      i++;
+      if (i === text.length) clearInterval(interval);
+    }, 60);
+    return () => clearInterval(interval);
+  }, [text]);
+  return <h2 style={{ color: "#fff", marginTop: "1.5rem", fontWeight: 600, letterSpacing: 1 }}>{displayed}<span className="preloader-typewriter-cursor">|</span></h2>;
 }
 
 function PreloaderContent({ children }) {

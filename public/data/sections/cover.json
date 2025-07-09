@@ -67,7 +67,7 @@
             "faIconColors": { "bg": "", "fill": "" },
             "locales": {
               "en": {
-"text": "<p>I'm Omkar Patil, an engineering student pursuing B.Tech in Information Technology at Walchand College of Engineering, Sangli (2022–2026). I specialize in full-stack development, with a strong interest in backend systems and RESTful API design.</p><p>I love turning complex problems into simple, efficient solutions through clean code and thoughtful design. My areas of focus include JavaScript, React, Node.js, and MongoDB.</p><p>With a constant drive to learn and grow, I enjoy collaborating on impactful projects, exploring new technologies, and contributing to open-source whenever possible.</p>"
+                "text": "<p><strong>Hi, I'm Omkar Patil</strong> — a passionate <b>full-stack developer</b> and IT undergrad at Walchand College of Engineering.</p><p>I thrive on turning <b>complex ideas</b> into <b>elegant, efficient solutions</b>. My toolkit? <b>JavaScript</b>, <b>React</b>, <b>Node.js</b>, and <b>MongoDB</b>.</p><p>I love building things that matter, collaborating with creative minds, and exploring the latest in tech.<br><em>Always learning. Always growing.</em><br>Let's create something amazing together!</p>"
               }
             }
           }
