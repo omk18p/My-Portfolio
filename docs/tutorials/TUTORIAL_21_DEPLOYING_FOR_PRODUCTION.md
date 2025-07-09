@@ -5,12 +5,12 @@ Open `vite.config.js` and set the base directory for your application. This sett
 
 ```js
 export default defineConfig({
-    base: '/react-portfolio-template/',
+    base: '/My-Portfolio/',
     plugins: [vue()],
 })
 ```
 
-In simple terms, if you consider GitHub hosting the GitHub Pages site for this repo at the URL `https://ryanbalieiro.github.io/react-portfolio-template/`, the correct base directory to set is `/react-portfolio-template/`.
+In simple terms, if you consider GitHub hosting the GitHub Pages site for this repo at the URL `https://omk18p.github.io/My-Portfolio/`, the correct base directory to set is `/My-Portfolio/`.
 
 If you're deploying to Netlify or your own custom domain where your website is located at the root, you can leave the `base` setting as `'/'`.
 
@@ -57,4 +57,4 @@ Ready to keep going? Check out the next bonus tutorial or revisit the previous o
 
 ⬅️ [Previous: ArticleContactForm](./TUTORIAL_20_CATEGORIZING_ARTICLE_ITEMS.md)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[Next: Bonus - Creating Your Own Custom Article](./TUTORIAL_22_BONUS_CREATING_YOUR_OWN_CUSTOM_ARTICLE.md) ➡️ 
+[Next: Bonus - Creating Your Own Custom Article](./TUTORIAL_22_BONUS_CREATING_YOUR_OWN_CUSTOM_ARTICLE.md) ➡️

@@ -9,7 +9,7 @@ Before we dive in, make sure you have the following installed:
 
 1. Clone the repo:
 ```
-git clone https://github.com/ryanbalieiro/react-portfolio-template
+git clone https://github.com/omk18p/My-Portfolio.git
 ```
 
 2. Go to the project's root folder and use npm to install all required components:
@@ -32,4 +32,4 @@ This will reset your portfolio, removing all the pre-filled sections and content
 
 Ready to keep going? Check out the next tutorial step:
 
-[Next: Configuring settings.json](./TUTORIAL_02_CONFIGURING_SETTINGS_JSON.md) ➡️ 
+[Next: Configuring settings.json](./TUTORIAL_02_CONFIGURING_SETTINGS_JSON.md) ➡️

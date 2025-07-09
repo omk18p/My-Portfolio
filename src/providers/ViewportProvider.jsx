@@ -1,6 +1,6 @@
 /**
- * @author Ryan Balieiro
- * @date 2025-05-10
+ * @author Omkar Patil
+ * @date 2023-12-20
  * @description This provider tracks the viewport size and scroll position, and provides utility functions to manage breakpoints and layout constraints.
  */
 

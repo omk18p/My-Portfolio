@@ -1,6 +1,6 @@
 /**
- * @author Ryan Balieiro
- * @date 2025-05-10
+ * @author Omkar Patil
+ * @date 2023-12-20
  * @description This component is a custom hook that provides a way to schedule and manage timeouts and intervals.
  */
 const timeouts = []

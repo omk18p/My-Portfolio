@@ -1,5 +1,5 @@
 /**
- * @author Ryan Balieiro
+ * @author Omkar Patil
  * @description Use this script to create new articles.
  *
  * @usage

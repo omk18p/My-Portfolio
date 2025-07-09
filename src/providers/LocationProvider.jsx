@@ -1,6 +1,6 @@
 /**
  * @author Omkar Patil
- * @date 2025-05-10
+ * @date 2023-12-20
  * @description This provider acts as a router for the application, managing the active section and category based on the URL hash.
  */
 

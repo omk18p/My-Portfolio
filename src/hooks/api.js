@@ -1,6 +1,6 @@
 /**
- * @author Ryan Balieiro
- * @date 2025-05-10
+ * @author Omkar Patil
+ * @date 2023-12-20
  * @description This hook provides methods to interact with external APIs.
  */
 
@@ -98,7 +98,8 @@ const analytics = {
      * @returns {Promise<void>}
      */
     reportVisit: async() => {
-        await fetch("https://ryanbalieiro.com/api/analytics/mock", {
+        // Placeholder for analytics endpoint
+        await fetch("https://api.example.com/analytics", {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
