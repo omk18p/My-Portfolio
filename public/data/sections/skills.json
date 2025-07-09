@@ -88,8 +88,8 @@
             "settings": {
                 "max_items_per_row": 3,
                 "max_rows_collapse_threshold": 6,
-                "order_items_by": "percentage",
-                "order_items_sort": "desc",
+                "order_items_by": "id",
+                "order_items_sort": "asc",
                 "round_icons": false
             },
             "items": [
@@ -112,20 +112,20 @@
                 {
                     "id": 2,
                     "img": "",
-                    "faIcon": "fa-brands fa-java",
-                    "faIconColors": {"bg": "", "fill": "#0295c2", "fillLight": "#007396"},
-                    "date": {"year": 2019, "month": 10},
+                    "faIcon": "fa-solid fa-server",
+                    "faIconColors": {"bg": "", "fill": "#000000"},
+                    "date": {"year": 2019, "month": 3},
                     "percentage": 85,
                     "locales": {
                         "en": {
-                            "title": "Java",
-                            "text": "Strong grasp of Java fundamentals  and object-oriented design.",
+                            "title": "Express.js",
+                            "text": "Skilled in building RESTful APIs and web applications using Express.js framework.",
                             "level": ""
                         }
                     }
                 },
                 {
-                    "id": 4,
+                    "id": 3,
                     "img": "",
                     "faIcon": "fa-solid fa-database",
                     "faIconColors": {"bg": "", "fill": "#4479A1"},
@@ -140,22 +140,7 @@
                     }
                 },
                 {
-                    "id": 5,
-                    "img": "",
-                    "faIcon": "fa-brands fa-docker",
-                    "faIconColors": {"bg": "", "fill": "#2496ED"},
-                    "date": {"year": 2021, "month": 4},
-                    "percentage": 60,
-                    "locales": {
-                        "en": {
-                            "title": "Docker",
-                            "text": "Hands-on knowledge in containerizing applications using Docker.",
-                            "level": ""
-                        }
-                    }
-                },
-                {
-                    "id": 9,
+                    "id": 4,
                     "img": "",
                     "faIcon": "fa-solid fa-server",
                     "faIconColors": {"bg": "", "fill": "#47A248"},
@@ -170,16 +155,16 @@
                     }
                 },
                 {
-                    "id": 10,
+                    "id": 5,
                     "img": "",
-                    "faIcon": "fa-brands fa-git",
-                    "faIconColors": {"bg": "", "fill": "#F05032"},
-                    "date": {"year": 2018, "month": 1},
-                    "percentage": 90,
+                    "faIcon": "fa-solid fa-database",
+                    "faIconColors": {"bg": "", "fill": "#880000"},
+                    "date": {"year": 2024, "month": 5},
+                    "percentage": 75,
                     "locales": {
                         "en": {
-                            "title": "Git",
-                            "text": "Skilled in using Git for version control and team collaboration via GitHub.",
+                            "title": "Mongoose",
+                            "text": "Experience with Mongoose ODM for MongoDB, including schema design and data modeling.",
                             "level": ""
                         }
                     }
@@ -196,43 +181,28 @@
             "settings": {
                 "max_items_per_row": 3,
                 "max_rows_collapse_threshold": 6,
-                "order_items_by": "percentage",
-                "order_items_sort": "desc",
+                "order_items_by": "id",
+                "order_items_sort": "asc",
                 "round_icons": false
             },
             "items": [
                 {
                     "id": 1,
                     "img": "",
-                    "faIcon": "fa-brands fa-html5",
-                    "faIconColors": {"bg": "", "fill": "#E34F26"},
-                    "date": {"year": 2020, "month": 6},
-                    "percentage": 90,
+                    "faIcon": "fa-brands fa-react",
+                    "faIconColors": {"bg": "", "fill": "#61DAFB", "fillLight": "#317385"},
+                    "date": {"year": 2022, "month": 1},
+                    "percentage": 85,
                     "locales": {
                         "en": {
-                            "title": "HTML 5",
-                            "text": "Proficient in HTML5 for creating structured and accessible web content.",
+                            "title": "React",
+                            "text": "Advanced proficiency in building responsive UIs and SPAs with React.",
                             "level": ""
                         }
                     }
                 },
                 {
                     "id": 2,
-                    "img": "",
-                    "faIcon": "fa-brands fa-css3-alt",
-                    "faIconColors": {"bg": "", "fill": "#1572B6"},
-                    "date": {"year": 2020, "month": 6},
-                    "percentage": 85,
-                    "locales": {
-                        "en": {
-                            "title": "CSS 3",
-                            "text": "Skilled in crafting responsive and visually engaging designs using CSS3.",
-                            "level": ""
-                        }
-                    }
-                },
-                {
-                    "id": 3,
                     "img": "",
                     "faIcon": "fa-brands fa-js",
                     "faIconColors": {"bg": "", "fill": "#F7DF1E", "fillLight": "#a69617"},
@@ -247,16 +217,31 @@
                     }
                 },
                 {
+                    "id": 3,
+                    "img": "",
+                    "faIcon": "fa-brands fa-html5",
+                    "faIconColors": {"bg": "", "fill": "#E34F26"},
+                    "date": {"year": 2020, "month": 6},
+                    "percentage": 90,
+                    "locales": {
+                        "en": {
+                            "title": "HTML 5",
+                            "text": "Proficient in HTML5 for creating structured and accessible web content.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
                     "id": 4,
                     "img": "",
-                    "faIcon": "fa-brands fa-react",
-                    "faIconColors": {"bg": "", "fill": "#61DAFB", "fillLight": "#317385"},
-                    "date": {"year": 2022, "month": 1},
+                    "faIcon": "fa-brands fa-css3-alt",
+                    "faIconColors": {"bg": "", "fill": "#1572B6"},
+                    "date": {"year": 2020, "month": 6},
                     "percentage": 85,
                     "locales": {
                         "en": {
-                            "title": "React",
-                            "text": "Advanced proficiency in building responsive UIs and SPAs with React.",
+                            "title": "CSS 3",
+                            "text": "Skilled in crafting responsive and visually engaging designs using CSS3.",
                             "level": ""
                         }
                     }
@@ -266,6 +251,145 @@
 
         {
             "id": 4,
+            "component": "ArticleSkills",
+            "locales": {
+                "en": {"title": "Programming Languages"}
+            },
+            "settings": {
+                "max_items_per_row": 3,
+                "max_rows_collapse_threshold": 6,
+                "order_items_by": "id",
+                "order_items_sort": "asc",
+                "round_icons": false
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "",
+                    "faIcon": "fa-brands fa-java",
+                    "faIconColors": {"bg": "", "fill": "#0295c2", "fillLight": "#007396"},
+                    "date": {"year": 2019, "month": 10},
+                    "percentage": 95,
+                    "locales": {
+                        "en": {
+                            "title": "Java",
+                            "text": "Strong grasp of Java fundamentals and object-oriented design.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "img": "",
+                    "faIcon": "fa-brands fa-js",
+                    "faIconColors": {"bg": "", "fill": "#F7DF1E", "fillLight": "#a69617"},
+                    "date": {"year": 2021, "month": 3},
+                    "percentage": 85,
+                    "locales": {
+                        "en": {
+                            "title": "JavaScript",
+                            "text": "Proficient in modern JavaScript including ES6+ features and asynchronous programming.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "img": "",
+                    "faIcon": "fa-solid fa-code",
+                    "faIconColors": {"bg": "", "fill": "#00599C"},
+                    "date": {"year": 2018, "month": 9},
+                    "percentage": 90,
+                    "locales": {
+                        "en": {
+                            "title": "C++",
+                            "text": "Solid understanding of C++ fundamentals and object-oriented programming.",
+                            "level": ""
+                        }
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": 5,
+            "component": "ArticleSkills",
+            "locales": {
+                "en": {"title": "Other Tools and Technology"}
+            },
+            "settings": {
+                "max_items_per_row": 3,
+                "max_rows_collapse_threshold": 6,
+                "order_items_by": "id",
+                "order_items_sort": "asc",
+                "round_icons": false
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "",
+                    "faIcon": "fa-brands fa-git",
+                    "faIconColors": {"bg": "", "fill": "#F05032"},
+                    "date": {"year": 2018, "month": 1},
+                    "percentage": 90,
+                    "locales": {
+                        "en": {
+                            "title": "Git & GitHub",
+                            "text": "Skilled in using Git for version control and team collaboration via GitHub.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "img": "",
+                    "faIcon": "fa-brands fa-docker",
+                    "faIconColors": {"bg": "", "fill": "#2496ED"},
+                    "date": {"year": 2021, "month": 4},
+                    "percentage": 60,
+                    "locales": {
+                        "en": {
+                            "title": "Docker",
+                            "text": "Hands-on knowledge in containerizing applications using Docker.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "img": "",
+                    "faIcon": "fa-solid fa-code",
+                    "faIconColors": {"bg": "", "fill": "#007ACC"},
+                    "date": {"year": 2020, "month": 5},
+                    "percentage": 80,
+                    "locales": {
+                        "en": {
+                            "title": "VS Code",
+                            "text": "Skilled in using VS Code with various extensions for efficient development workflow.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "img": "",
+                    "faIcon": "fa-solid fa-robot",
+                    "faIconColors": {"bg": "", "fill": "#00A8FF"},
+                    "date": {"year": 2023, "month": 6},
+                    "percentage": 85,
+                    "locales": {
+                        "en": {
+                            "title": "Cursor AI",
+                            "text": "Proficient in using Cursor AI for enhanced coding productivity and AI-assisted development.",
+                            "level": ""
+                        }
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": 6,
             "component": "ArticleSkills",
             "locales": {
                 "en": {"title": "Languages"}
