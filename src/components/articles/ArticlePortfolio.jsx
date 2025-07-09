@@ -9,6 +9,8 @@ import {Tag, Tags} from "/src/components/generic/Tags.jsx"
 import ArticleItemPreviewMenu from "/src/components/articles/partials/ArticleItemPreviewMenu.jsx"
 import {useLanguage} from "/src/providers/LanguageProvider.jsx"
 import { motion } from 'framer-motion'
+import {ModalWrapper, ModalWrapperTitle, ModalWrapperBody} from "/src/components/modals/base/ModalWrapper"
+import GalleryModal from "/src/components/modals/GalleryModal.jsx"
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -18,8 +20,12 @@ import { motion } from 'framer-motion'
  */
 function ArticlePortfolio({ dataWrapper, id }) {
     const [selectedItemCategoryId, setSelectedItemCategoryId] = useState(null)
+    const [modalProject, setModalProject] = useState(null)
+    const [showGallery, setShowGallery] = useState(false)
+    const [galleryImages, setGalleryImages] = useState([])
 
     return (
+        <>
         <Article id={dataWrapper.uniqueId}
                  type={Article.Types.SPACING_DEFAULT}
                  dataWrapper={dataWrapper}
@@ -27,8 +33,43 @@ function ArticlePortfolio({ dataWrapper, id }) {
                  selectedItemCategoryId={selectedItemCategoryId}
                  setSelectedItemCategoryId={setSelectedItemCategoryId}>
             <ArticlePortfolioItems dataWrapper={dataWrapper}
-                                   selectedItemCategoryId={selectedItemCategoryId}/>
+                                   selectedItemCategoryId={selectedItemCategoryId}
+                                   onProjectClick={setModalProject}/>
         </Article>
+        {modalProject && (
+            <ModalWrapper id={`project-details-modal-${modalProject.id || ''}`} onDismiss={() => setModalProject(null)}>
+                <ModalWrapperTitle title={modalProject.locales.title} faIcon="fa-solid fa-folder-open" onClose={() => setModalProject(null)} />
+                <ModalWrapperBody>
+                    <div style={{marginBottom: 16}}>
+                        <Tags>
+                            {modalProject.locales.tags && modalProject.locales.tags.map((tag, i) => (
+                                <Tag key={i} text={tag} variant={Tag.Variants.DARK}/>
+                            ))}
+                        </Tags>
+                    </div>
+                    <div className="text-2" dangerouslySetInnerHTML={{__html: modalProject.locales.text}}/>
+                    <div style={{marginTop: 24, marginBottom: 8}}>
+                        <hr/>
+                        <div className="fw-bold mb-2">More about this project:</div>
+                        <div className="text-2" style={{whiteSpace: 'pre-line'}}>
+                            {modalProject.locales.moreInfo ? modalProject.locales.moreInfo : 'No additional information.'}
+                        </div>
+                    </div>
+                    {modalProject.preview?.screenshots?.length > 0 && (
+                        <div style={{marginTop: 24, marginBottom: 16}}>
+                            <button className="btn btn-primary" onClick={() => { setGalleryImages(modalProject.preview.screenshots); setShowGallery(true); }}>View Screenshots</button>
+                        </div>
+                    )}
+                    <div style={{marginTop: 16}}>
+                        <ArticleItemPreviewMenu itemWrapper={modalProject} spaceBetween={true}/>
+                    </div>
+                </ModalWrapperBody>
+            </ModalWrapper>
+        )}
+        {showGallery && (
+            <GalleryModal target={{ images: galleryImages, title: modalProject?.locales?.title }} onDismiss={() => setShowGallery(false)} />
+        )}
+        </>
     )
 }
 
@@ -38,7 +79,7 @@ function ArticlePortfolio({ dataWrapper, id }) {
  * @return {JSX.Element}
  * @constructor
  */
-function ArticlePortfolioItems({ dataWrapper, selectedItemCategoryId }) {
+function ArticlePortfolioItems({ dataWrapper, selectedItemCategoryId, onProjectClick }) {
     const constants = useConstants()
     const language = useLanguage()
     const viewport = useViewport()
@@ -62,7 +103,8 @@ function ArticlePortfolioItems({ dataWrapper, selectedItemCategoryId }) {
                             className={`article-portfolio-items ${itemsPerRowClass}`}>
                 {filteredItems.map((itemWrapper, key) => (
                     <ArticlePortfolioItem itemWrapper={itemWrapper}
-                                          key={key}/>
+                                          key={key}
+                                          onClick={() => onProjectClick(itemWrapper)}/>
                 ))}
             </Transitionable>
         )
@@ -72,7 +114,8 @@ function ArticlePortfolioItems({ dataWrapper, selectedItemCategoryId }) {
             <div className={`article-portfolio-items ${itemsPerRowClass} mb-3 mb-lg-2`}>
                 {filteredItems.map((itemWrapper, key) => (
                     <ArticlePortfolioItem itemWrapper={itemWrapper}
-                                          key={key}/>
+                                          key={key}
+                                          onClick={() => onProjectClick(itemWrapper)}/>
                 ))}
             </div>
         )
@@ -84,7 +127,7 @@ function ArticlePortfolioItems({ dataWrapper, selectedItemCategoryId }) {
  * @return {JSX.Element}
  * @constructor
  */
-function ArticlePortfolioItem({ itemWrapper }) {
+function ArticlePortfolioItem({ itemWrapper, onClick }) {
     return (
         <motion.div 
             className={`article-portfolio-item`}
@@ -92,6 +135,8 @@ function ArticlePortfolioItem({ itemWrapper }) {
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.025, boxShadow: '0 2px 16px #C084FC66' }}
             transition={{ type: 'spring', stiffness: 140, damping: 18, duration: 0.22 }}
+            onClick={onClick}
+            style={{ cursor: 'pointer' }}
         >
             <AvatarView src={itemWrapper.img}
                         faIcon={itemWrapper.faIcon}

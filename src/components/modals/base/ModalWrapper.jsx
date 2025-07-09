@@ -7,89 +7,31 @@ import {useViewport} from "/src/providers/ViewportProvider.jsx"
 import {useUtils} from "/src/hooks/utils.js"
 
 function ModalWrapper({ children, id = "", shouldDismiss, onDismiss, className = "", dialogClassName = "" }) {
-    const viewport = useViewport()
-    const utils = useUtils()
-
-    const [elModal, setElModal] = useState(null)
-    const [bsModal, setBsModal] = useState(null)
-    const [savedScrollY, setSavedScrollY] = useState(null)
-
-    /** @constructs **/
+    // Prevent background scroll when modal is open
     useEffect(() => {
-        const elModal = document.getElementById(id)
-        setElModal(elModal)
-        return () => { _destroy() }
-    }, [null])
-
-    /** @listens elModal - Create Element **/
-    useEffect(() => {
-        if(!elModal)
-            return
-        _create()
-    }, [elModal])
-
-    /** @listens shouldDismiss - Scroll Adjustments **/
-    useEffect(() => {
-        if(!utils.device.isTouchDevice() || viewport.isDesktopLayout())
-            return
-
-        if(!shouldDismiss) {
-            setSavedScrollY(viewport.scrollY)
-            utils.capabilities.scrollTo(0, false)
+        document.body.style.overflow = 'hidden';
+        return () => { document.body.style.overflow = ''; };
+    }, []);
+    // Pure React modal: no Bootstrap JS
+    // Close on backdrop click or close button
+    const handleBackdropClick = (e) => {
+        if (e.target.classList.contains('modal')) {
+            onDismiss && onDismiss();
         }
-        else {
-            utils.capabilities.scrollTo(savedScrollY || 0, true)
-        }
-    }, [shouldDismiss])
-
-    /** @listens shouldDismiss - Destroy Element **/
-    useEffect(() => {
-        if(!shouldDismiss)
-            return
-
-        _destroy()
-    }, [shouldDismiss])
-
-    const _create = () => {
-        const config = {
-            backdrop: onDismiss ? true : "static",
-            keyboard: false
-        }
-
-        const bsModal = new Modal(elModal, config)
-        elModal.addEventListener('hide.bs.modal', _onWillHide)
-        elModal.addEventListener('hidden.bs.modal', () => {
-            if(onDismiss)
-                onDismiss()
-        })
-        bsModal.show()
-        setBsModal(bsModal)
-    }
-
-    const _destroy = () => {
-        if(!elModal || !bsModal)
-            return
-
-        elModal.removeEventListener('hide.bs.modal', _onWillHide)
-        bsModal.hide()
-    }
-
-    const _onWillHide = () => {
-        if(!document.activeElement)
-            return
-        document.activeElement.blur()
-    }
-
+    };
     return (
         <div id={id}
-             className={`modal ${className}`}>
-            <div className={`modal-dialog ${dialogClassName}`}>
+             className={`modal show d-block modal-fade-animate ${className}`}
+             tabIndex="-1"
+             style={{ background: 'rgba(0,0,0,0.7)' }}
+             onClick={handleBackdropClick}>
+            <div className={`modal-dialog ${dialogClassName}`} style={{ pointerEvents: 'auto', transition: 'transform 0.3s cubic-bezier(.25,.8,.25,1), opacity 0.3s cubic-bezier(.25,.8,.25,1)', transform: 'scale(1)', opacity: 1 }}>
                 <div className={`modal-content`}>
                     {children}
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 function ModalWrapperTitle({ title, faIcon, onClose, tooltip }) {

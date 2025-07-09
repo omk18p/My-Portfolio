@@ -41,7 +41,7 @@
                   "faIcon": "fa-brands fa-github"
                 }
               ],
-              "screenshots": [],
+             
               "screenshotsAspectRatio": "",
               "youtubeVideo": ""
             },
@@ -49,7 +49,8 @@
               "en": {
                 "title": "QuickHire AI",
                 "text": "An AI-powered technical interview platform for companies and students. It features <b>AI-generated questions</b>, <b>real-time feedback</b>, and <b>intelligent evaluation</b> via Google Gemini. Companies can upload candidates and view performance reports, while students take mock or official interviews in an interactive environment.",
-                "tags": ["MERN", "AI", "Interview Platform", "OpenAI", "JWT"]
+                "tags": ["MERN", "AI", "Interview Platform", "OpenAI", "JWT"],
+                "moreInfo": "QuickHire AI is a modern AI-powered technical interview platform for companies and students. It features AI-generated questions, real-time feedback, and intelligent evaluation via Google Gemini. Companies can upload candidates and view performance reports, while students take mock or official interviews in an interactive environment. Technologies: React, Node.js, MongoDB, Google Gemini API."
               }
             }
           },
@@ -75,7 +76,8 @@
               "en": {
                 "title": "MyGym – Gym Management System",
                 "text": "A full-stack gym management system for Android and web. Includes QR-based <b>attendance tracking</b>, <b>health reports</b>, <b>live dashboard</b>, and a <b>chat system</b>. Built with <b>React</b>, <b>Java (Android)</b>, and <b>Firebase</b> for real-time data and secure access.",
-                "tags": ["React", "Android", "Firebase", "Gym Management", "QR", "Java"]
+                "tags": ["React", "Android", "Firebase", "Gym Management", "QR", "Java"],
+                "moreInfo": "MyGym is a comprehensive gym management system for Android and web. It includes QR-based attendance tracking, health reports, a live dashboard, and a chat system. Built with React, Java (Android), and Firebase for real-time data and secure access. This system was developed to streamline gym operations and enhance member engagement."
               }
             }
           },
@@ -101,7 +103,8 @@
               "en": {
                 "title": "CodeSync",
                 "text": "A real-time collaborative code editor built using <b>React</b>, <b>Express.js</b>, <b>Socket.IO</b>, and <b>Monaco Editor</b>. Supports multiple users in a shared session with <b>file syncing</b>, <b>real-time typing indicators</b>, and <b>multi-language syntax highlighting</b>.",
-                "tags": ["WebSocket", "Real-Time", "Editor", "React", "Monaco", "Express"]
+                "tags": ["WebSocket", "Real-Time", "Editor", "React", "Monaco", "Express"],
+                "moreInfo": "CodeSync enables real-time collaborative coding for teams and classrooms. Users can join shared sessions, edit files together, and see each other's typing in real time. The platform supports multiple languages and syntax highlighting via Monaco Editor. Built for a university project, it has been used in coding workshops and hackathons. Technologies: React, Express.js, Socket.IO, Monaco Editor."
               }
             }
           },{
@@ -131,7 +134,8 @@
               "en": {
                 "title": "My Portfolio",
                 "text": "A personal portfolio built using <b>React</b> and <b>Vite</b>. Showcases projects, skills, and background with support for dark/light themes, preloader, and animated UI. Fully responsive and optimized for performance.",
-                "tags": ["Portfolio", "React", "Vite", "Frontend", "Responsive"]
+                "tags": ["Portfolio", "React", "Vite", "Frontend", "Responsive"],
+                "moreInfo": "This portfolio is a showcase of my projects, skills, and professional journey. It features a fully responsive design, dark/light themes, and animated UI elements for a modern user experience. Built with React and Vite, it is optimized for performance and easy updates. The site is deployed on Vercel and includes a downloadable resume, contact form, and project gallery."
               }
             }
           }
