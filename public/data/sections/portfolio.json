@@ -85,14 +85,19 @@
             "id": 3,
             "categoryId": "category_web",
             "img": "",
-            "faIcon": "fa-solid fa-code-branch",
+            "faIcon": "fa-solid fa-shopping-cart",
             "faIconColors": { "bg": "", "fill": "" },
             "preview": {
               "links": [
                 {
-                  "href": "https://github.com/omk18p/CodeSync",
+                  "href": "https://github.com/omk18p/mern-ecommerce",
                   "tooltipString": "see_on_github",
                   "faIcon": "fa-brands fa-github"
+                },
+                {
+                  "href": "https://e-commerce-orpin-alpha.vercel.app/",
+                  "tooltipString": "visit_website",
+                  "faIcon": "fa-solid fa-up-right-from-square"
                 }
               ],
               "screenshots": [],
@@ -101,13 +106,14 @@
             },
             "locales": {
               "en": {
-                "title": "CodeSync",
-                "text": "A real-time collaborative code editor built using <b>React</b>, <b>Express.js</b>, <b>Socket.IO</b>, and <b>Monaco Editor</b>. Supports multiple users in a shared session with <b>file syncing</b>, <b>real-time typing indicators</b>, and <b>multi-language syntax highlighting</b>.",
-                "tags": ["WebSocket", "Real-Time", "Editor", "React", "Monaco", "Express"],
-                "moreInfo": "CodeSync enables real-time collaborative coding for teams and classrooms. Users can join shared sessions, edit files together, and see each other's typing in real time. The platform supports multiple languages and syntax highlighting via Monaco Editor. Built for a university project, it has been used in coding workshops and hackathons. Technologies: React, Express.js, Socket.IO, Monaco Editor."
+                "title": "NovaMart – E-Commerce Platform",
+                "text": "A modern full-stack e-commerce platform built with <b>MERN stack</b>. Features include <b>user authentication</b>, <b>product management</b>, <b>shopping cart</b>, <b>wishlist</b>, <b>order processing</b>, and <b>admin dashboard</b>. Includes stunning <b>starry midnight theme</b> with animated stars and glassmorphism design.",
+                "tags": ["MERN", "E-Commerce", "React", "Node.js", "MongoDB", "Redux"],
+                "moreInfo": "NovaMart is a comprehensive e-commerce platform with a beautiful starry midnight theme featuring animated stars, comets, and rockets. The platform includes user authentication, product management with search and filtering, shopping cart functionality, wishlist features, order processing, and a complete admin dashboard. Built with React, Node.js, MongoDB, and Redux for state management. Features real-time search, responsive design, and modern UI/UX with glassmorphism effects."
               }
             }
-          },{
+          },
+          {
             "id": 4,
             "categoryId": "category_web",
             "img": "",
@@ -144,4 +150,3 @@
       }
     ]
   }
-  
