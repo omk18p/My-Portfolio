@@ -6,7 +6,7 @@ Welcome to my personal portfolio website — a responsive and interactive site t
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure .
 
 ```
 My-Portfolio/
