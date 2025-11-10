@@ -44,5 +44,5 @@ function LayoutImageCache({ profile, settings, sections }) {
         </div>
     )
 }
-
+//added footer
 export default LayoutImageCache
